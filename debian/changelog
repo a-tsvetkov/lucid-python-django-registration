@@ -1,0 +1,154 @@
+python-django-registration (0.8) unstable; urgency=low
+
+  [ Raphael Hertzog ]
+  * Backend-based rewrite. See docs/upgrade.rst for details.
+  * Compatibility through Django 1.4.
+
+ -- Alexander Tsvetkov <sickuenser@eastwood-lab.ru>  Sat, 09 Jun 2012 13:17:36 +0400
+
+python-django-registration (0.7-2) unstable; urgency=low
+
+  * Add accent on my name in debian/control.
+  * Change build-depends on python-dev to python.
+  * Switch to source format "3.0 (quilt)".
+  * Switch to debhelper 7 tiny rules file and compat mode 7.
+  * Upgrade Standards-Version to 3.8.3.
+  * Dropped useless debian/pycompat.
+  * Add missing ${misc:Depends} on Depends line.
+  * Register documentation with doc-base.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Wed, 27 Jan 2010 16:09:24 +0100
+
+python-django-registration (0.7-1) unstable; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Stephan Peijnik ]
+  * New upstream release.
+  * Updated debian/watch to use pypi.python.org as source of new upstream
+    tarballs.
+
+  [ Raphael Hertzog ]
+  * Update URL in Homepage field to match new upstream site (it moved to
+    Bitbucket).
+  * Drop 02_overview_rst_fix.patch and 01_validators_removed.patch as they got
+    merged upstream.
+  * delete_expired_users.py does no more exist. It has been replaced with a
+    manage.py sub-command (manage.py cleanupregistration) that you can invoke
+    within any project using django-registration.
+  * Drop .po files from binary package.
+
+ -- Raphael Hertzog <hertzog@debian.org>  Wed, 12 Nov 2008 10:06:06 +0100
+
+python-django-registration (0.6-3) unstable; urgency=low
+
+  * Modified package to use quilt patchsys (requested by Raphael Hertzog).
+  * Added myself to Uploaders.
+  * Moved package to unstable, as it is compatible with the version of
+    python-django in unstable.
+  * debian/control:
+    - Updated dependency on python-django (>= 1.0).
+    - Removed Prority: optional from binary package.
+  * debian/rules:
+    - Removed simple-patchsys.mk from includes.
+    - Added patchsys-quilt.mk to includes.
+    - Made clean target depend on unpatch.
+  * debian/patches/01_validators_removed.patch:
+    - Pulled in bugfixes in revisions 167 and 168 from upstream SVN.
+      This patch fixes the bug introduced by the removal of
+      django.core.validators in python-django 1.0-1. (Closes: #498086)
+  * debian/patches/02_overview_rst_fix.patch:
+    - Fixes a typo in overview.txt causing rst2html to return an error.
+  * Moved delete_expired_users.py script out of site-packages into
+    /usr/share/doc/python-django-registration/examples.
+  * Added debian/python-django-registration.README.Debian to document
+    the delete_expired_users.py change.
+  * Documented patches in debian/patches.
+
+ -- Stephan Peijnik <debian@sp.or.at>  Tue, 16 Sep 2008 12:06:09 +0200
+
+python-django-registration (0.6-2) experimental; urgency=low
+
+  * debian/control:
+    - added dependency on python-django (>= 1.0~beta1) (Thanks to Raphael
+      Hertzog).
+  * debian/rules:
+    - added call to new compile-messages interface through django-admin.
+    - remove ._django.po during clean.
+
+ -- David Spreen <netzwurm@debian.org>  Fri, 22 Aug 2008 12:32:04 -0700
+
+python-django-registration (0.6-1) experimental; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/watch
+    - fixed to work with code.google.com
+
+  [ David Spreen ]
+  * New upstream SVN snapshot to ensure compatibility with upcoming 1.0
+    release of python-django.
+  * debian/rules
+    - Removed the call to compile-messages since it requires
+      experimental django version. This will be added again once
+      Django 1.0 enters sid.
+  * debian/control:
+    - Removed build-dependency on python-django. See above.
+    - Depend on python-django (>= 1.0~beta1).
+    - Updated policy version.
+
+ -- David Spreen <netzwurm@debian.org>  Thu, 21 Aug 2008 17:39:12 -0700
+
+python-django-registration (0.4p2-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Raphael Hertzog <hertzog@debian.org>  Sun, 02 Mar 2008 12:26:25 +0100
+
+python-django-registration (0.4p1-1) experimental; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/control
+    - uniforming Vcs-Browser field
+
+  [ Raphael Hertzog ]
+  * New upstream release.
+  * Updated Standards-Version to 3.7.3 (no change).
+  * Fix dependency on python-django to really require the experimental
+    version. Closes: #460413
+  * Move python-django, python-docutils and python-support from Build-Depends
+    to Build-Depends-Indep as they are not needed during cleanup.
+
+ -- Raphael Hertzog <hertzog@debian.org>  Sat, 12 Jan 2008 15:58:38 +0100
+
+python-django-registration (0.3p5-1) experimental; urgency=low
+
+  * New upstream release.
+  * Drop debian/patches/01_fix_setup_py.patch which got integrated upstream.
+  * Generate HTML for new (rst) documentation files.
+
+ -- Raphael Hertzog <hertzog@debian.org>  Mon, 08 Oct 2007 16:43:19 +0200
+
+python-django-registration (0.3p3-1) experimental; urgency=low
+
+  [ Piotr Ożarowski ]
+  * XS-Vcs-Browser and Homepage fields added
+
+  [ Raphael Hertzog ]
+  * New upstream release.
+  * Renamed XS-Vcs* to Vcs-* since they are supported by dpkg now.
+  * debian/patches/01_fix_setup_py.patch: Make sure that non *.py files
+    like translations are also included. (patch forwarded upstream)
+  * Compile translations into *.mo files with the django's make-messages.py.
+    Build-Depends on python-django for this.
+
+ -- Raphael Hertzog <hertzog@debian.org>  Thu, 04 Oct 2007 18:23:37 +0200
+
+python-django-registration (0.2-1) experimental; urgency=low
+
+  * Initial release.
+  * Upload to experimental because it requires the development version
+    of python-django.
+
+ -- Raphael Hertzog <hertzog@debian.org>  Tue, 31 Jul 2007 15:10:52 +0200

@@ -1,0 +1,13 @@
+Document: django-registration-overview
+Title: Django Registration Documentation
+Abstract: This is the documentation of Django Registration, a fairly simple
+ user-registration application for Django, designed to make allowing user
+ signups as painless as possible.
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-django-registration/overview.html
+Files: /usr/share/doc/python-django-registration/*.html
+
+Format: Text
+Files: /usr/share/doc/python-django-registration/overview.txt* /usr/share/doc/python-django-registration/views.txt* /usr/share/doc/python-django-registration/models.txt* /usr/share/doc/python-django-registration/forms.txt*

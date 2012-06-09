@@ -1,0 +1,3 @@
+registration/locale/*/*/*.mo
+# Upstream included MacOS resource fork files. Remove!
+registration/locale/*/*/._*.po

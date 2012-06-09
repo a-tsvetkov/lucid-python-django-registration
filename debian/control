@@ -1,0 +1,27 @@
+Source: python-django-registration
+Section: python
+Priority: optional
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Raphaël Hertzog <hertzog@debian.org>, David Spreen <netzwurm@debian.org>, Stephan Peijnik <debian@sp.or.at>
+Standards-Version: 3.8.3
+Build-Depends: debhelper (>= 7.0.50~), python
+Build-Depends-Indep: python-support (>= 0.3), python-docutils, python-django (>= 1.0)
+Homepage: http://www.bitbucket.org/ubernostrum/django-registration/wiki/
+Vcs-Svn: svn://svn.debian.org/python-modules/packages/python-django-registration/trunk/
+Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/python-django-registration/trunk/
+
+Package: python-django-registration
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}, python-django (>= 1.0)
+Description: A user-registration application for Django
+ This is a fairly simple user-registration application for Django,
+ designed to make allowing user signups as painless as possible.
+ .
+ Its main feature over Django's standard user-registration application is
+ the support of email confirmation.
+ .
+ This application enables a fairly common workflow for user signups:
+  1. User signs up for an account.
+  2. User gets emailed an activation link.
+  3. User clicks the activation link before it expires.
+  4. User becomes a happy and productive contributor to your site.
